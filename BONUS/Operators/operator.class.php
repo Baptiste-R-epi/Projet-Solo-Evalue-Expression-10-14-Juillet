@@ -14,7 +14,7 @@ class operator
 
 
 	public function __construct($symbol, $structure, $order, $priority, $callback) {
-		if (!preg_match("/^[#n,]+$/", $structure)) {
+		if (!preg_match("/^(n(,n)*)#\g<1>?$|^(n(,n)*)?#\g<1>$/", $structure)) {
 			echo "\nStructure should be of format similar to : 'n#n' or '#n' or '#n,n'.\n",
 				"Where n is a number as argument to callback.\n",
 				"Where # is the operator.\n";
